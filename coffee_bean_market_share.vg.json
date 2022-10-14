@@ -1,0 +1,14 @@
+{
+    "data": {
+      "values": [
+        {"category": "Arabica", "value": 60},
+        {"category": "Robuta", "value": 30},
+        {"category": "Other", "value": 10}
+      ]
+    },
+    "mark": {"type": "arc", "tooltip": true},
+    "encoding": {
+      "theta": {"field": "value", "type": "quantitative", "stack": "normalize"},
+      "color": {"field": "category", "type": "nominal"}
+    }
+  }

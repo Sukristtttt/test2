@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Import Vega & Vega-Lite -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+  
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+
+  <!-- Pure CSS library -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/grids-responsive-min.css" />
+
+</head>
+
+<body>
+
+  <div class="pure-g">
+    <!-- Left margin -->
+    <div class="pure-u-1-8">
+      <div id="margin"></div>
+    </div>
+
+    <!-- Middle section for content -->
+    <div class="pure-u-3-4">
+      <div id="container">
+        <div id="nps_logo">
+          <img id="nps_img"
+          src="https://github.com/Sukristtttt/test2/blob/490cc970ccf4892026572209cb3af43febeb5fa2/0f93c7590ea0d6cd8561eda5da12465d.jpg" 
+          alt="NPS logo"
+          class="center">
+        </div>
+
+        <div id="title">
+          <h1>COFFEE 2022</h2>
+          <h5>An introduction of Coffee, 2022</h5>
+        </div>
+
+        <hr>
+
+        <!-- map chart heading -->
+        <div id="map_heading">
+          <h2> Production of Coffee</h3>
+         
+        </div>
+
+        <!-- map chart grid -->
+        <div class="pure-g">
+          <!-- Chart -->
+          <div class="pure-u-3-4">
+            <div id="map_chart" style="width: 50%"></div>
+          </div>
+          <!-- Text -->
+          <div class="pure-u-1-4">
+            <div id="map_chart_text">
+              <ul class="right_side_text">
+                <li>This map chart shows all the countries that producing coffee bean.</li>
+                <li><span style="color: #f30404; font-family: NationalPark-Bold">Brazil </span> produces the largest amount of coffee beans each year, </span> with <span style="color: #f30404; font-family: NationalPark-Bold">3700231 </span>tonnes.</span></li>
+                <li>Most countries do not produce coffee beans, with<span style="color: #f17304; font-family: NationalPark-Bold">climate and geographical location</span>being the main reasons.</span></li>
+                <li>So from the graph we can also infer again that the tropical climate<span style="color: #ff0000; font-family: NationalPark-Bold">around the equator</span>is a suitable geographic location for coffee beans to grow. Therefore these countries, especially Brazil, produce a particularly large amount of coffee beans.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Small multiples heading -->
+        <div id="small_multiples_heading">
+          <h3>The market of coffee bean</h3>
+         
+        </div>
+
+        <!-- Small multiples grid -->
+        <div class="pure-g">
+          <!-- Text -->
+          <div class="pure-u-1-4">
+            <div id="map_chart_text">
+              <ul class="left_side_text">
+                <li><span style="color: #f30404; font-family: NationalPark-Bold">Arabica coffee bean</span> occupied the largest market share, with about <span style="color: #f30404; font-family: NationalPark-Bold">60% </span>.</li>
+                
+              </ul>
+            </div>
+          </div>
+          <!-- Chart -->
+          <div class="pure-u-3-4">
+            <div id="small_multiples"></div> <!-- Cannot set responsive container width for Vega-Lite repeat elements -->
+          </div>
+        </div>
+
+        <div class="divider" style="height: 35px"></div>
+
+        
+
+
+  <script type="text/javascript">
+
+    var spec1 = "choropleth_map.vg.json";
+    var spec2 = "coffee_bean_market_share.vg.json"
+  
+
+    vegaEmbed('#map_chart', spec1).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#small_multiples', spec2).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+   
+
+  </script>
+
+</body>
+</html>
